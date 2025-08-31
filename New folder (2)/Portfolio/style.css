@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Updated to use :root and :root.dark classes with new bg-color and text-color variables */
+:root {
+  /* Base theme colors */
+  --bg-color: #ffffff;
+  --text-color: #000000;
+
+  /* Primary colors */
+  --primary-color: #3a6cf4;
+  --primary-hover: #0a49f6;
+  --primary-alt-hover: #601cfc;
+
+  /* Background colors */
+  --background-color: var(--bg-color);
+  --card-background: #ffffff;
+  --section-background: #000016;
+  --footer-background: #000016;
+
+  /* Text colors */
+  --text-primary: var(--text-color);
+  --text-secondary: #3a6cf4;
+  --text-light: #ffffff;
+  --text-muted: #f0f0f0;
+
+  /* Border and shadow colors */
+  --border-color: #f0f0f0;
+  --shadow-color: rgba(1, 1, 1, 0.15);
+
+  /* Icon colors */
+  --icon-color: #3a6cf4;
+  --icon-hover: #f0f0f0;
+}
+
+/* Dark Theme */
+:root.dark {
+  /* Base theme colors */
+  --bg-color: #121212;
+  --text-color: #ffffff;
+
+  /* Primary colors - more vibrant and modern */
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --primary-alt-hover: #8b5cf6;
+
+  /* Background colors - better contrast and modern dark theme */
+  --background-color: var(--bg-color);
+  --card-background: #1e1e1e;
+  --section-background: #0a0a0a;
+  --footer-background: #0a0a0a;
+
+  /* Text colors - improved readability */
+  --text-primary: var(--text-color);
+  --text-secondary: #6366f1;
+  --text-light: #f1f5f9;
+  --text-muted: #cbd5e1;
+
+  /* Border and shadow colors - more visible in dark mode */
+  --border-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+
+  /* Icon colors - better contrast */
+  --icon-color: #6366f1;
+  --icon-hover: #f1f5f9;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Updated body to use new bg-color and text-color variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  background-color: var(--background-color);
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 200px;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8em;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1.1em;
+  padding-left: 30px;
+}
+
+.navigation a:hover {
+  color: var(--primary-alt-hover);
+}
+
+.main {
+  padding: 100px 200px;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  display: flex;
+  background: url(images/back.jpg) no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.main h2 {
+  color: var(--text-light);
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.main h2 span {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--text-light);
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.main h3 {
+  color: var(--text-light);
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.main-btn {
+  color: var(--text-light);
+  background-color: var(--primary-color);
+  background-size: 100%;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0.9375em 2.1875em;
+  letter-spacing: 1px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: 0.7s ease;
+}
+
+.main-btn:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.1);
+}
+
+.social-icons a {
+  color: var(--text-light);
+  font-size: 2.5em;
+  padding-right: 30px;
+}
+
+#linkedin {
+  margin-left: 40px;
+}
+
+.title {
+  padding-top: 80px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 2.2em;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-left: 450px;
+  gap: 20px;
+}
+
+/* Enhanced card styling with better dark mode support */
+.card {
+  background-color: var(--card-background);
+  width: 21.25em;
+  min-width: 21.25em;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 25px;
+  margin: 15px 0;
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+}
+
+.card .info {
+  text-align: center;
+}
+
+/* Improved hover effects for cards */
+.card:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-8px) scale(1.02);
+  color: var(--text-light);
+  box-shadow: 0 16px 48px var(--shadow-color);
+}
+
+.icon {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 8em;
+}
+
+.info h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+/* Better text color handling in hover state */
+.card:hover .info h3 {
+  color: var(--text-light);
+}
+
+.projects {
+  background-color: var(--section-background);
+}
+
+.projects .content {
+  margin-top: 30px;
+}
+
+/* Enhanced project card styling */
+.project-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  min-height: 14em;
+  width: 23em;
+  flex-shrink: 0;
+  min-width: 23em;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+.project-card:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-8px) scale(1.02);
+  color: var(--text-light);
+  box-shadow: 0 16px 48px var(--shadow-color);
+}
+
+.project-card:hover .project-image {
+  opacity: 0.8;
+}
+
+.project-card:hover .project-title,
+.project-card:hover .project-category,
+.project-card:hover .project-link {
+  color: var(--text-light);
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+}
+
+.project-description {
+  padding: 1em;
+}
+
+.project-category {
+  font-size: 0.8em;
+  color: var(--text-primary);
+}
+
+.project-title {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-weight: 800;
+}
+
+.project-title a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+#phone,
+#email {
+  font-weight: 250;
+  text-align: center;
+  margin-top: 20px;
+  font-size: larger;
+  color: var(--text-primary);
+}
+
+/* Better icon color handling in hover states */
+.card:hover #phone,
+.card:hover #email {
+  color: var(--text-light);
+}
+
+.card:hover #phone-icon,
+.card:hover #email-icon,
+.card:hover #data-icon,
+.card:hover #web-icon {
+  color: var(--text-light);
+}
+
+.contact-cards .icon {
+  font-size: 4.5em;
+  color: var(--icon-color);
+}
+
+.contact-cards .info h3 {
+  color: var(--text-primary);
+}
+
+.contact-cards .card:hover h3 {
+  color: var(--text-light);
+}
+
+.contact-cards .info p {
+  font-size: 0.9em;
+}
+
+footer {
+  background-color: var(--footer-background);
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.footer-text {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.footer-text span {
+  color: var(--primary-color);
+}
+
+footer .social-icons {
+  font-size: 0.6em;
+}
+
+@media (max-width: 1023px) {
+  header {
+    padding: 12px 20px;
+  }
+  .navigation a {
+    padding-left: 10px;
+  }
+  .title {
+    font-size: 1.8em;
+  }
+  section {
+    padding: 80px 20px;
+  }
+  .main-content h2 {
+    font-size: 1em;
+  }
+  .main-content h3 {
+    font-size: 1.6em;
+  }
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
